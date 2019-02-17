@@ -10,13 +10,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите ваше имя");
-            string name;
-            name = Console.ReadLine();
-            if (name == "")
-                Console.WriteLine("Здраствуй мир!");
-            else
-                Console.WriteLine("Здраствуй, " + name + "!");
+            Console.WriteLine("Введите символы");
+            int i;
+            do
+            {
+                i = Console.Read();
+                if ((char)i == '#')
+                    break;
+                
+                Console.Write((char)i);
+            } while (true);
+            
+            Console.ReadLine();
             Console.ReadLine();
         }
     }
