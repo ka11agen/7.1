@@ -12,18 +12,20 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Введите символы");
             int i, a=0,b=0;
+            ConsoleKeyInfo keypress;
             do
             {
-                i = Console.Read();
-                if ((char)i == '#')
-                    break;
-                if ((char)i == '0')
+                keypress = Console.ReadKey();
+
+                if (keypress.Key == ConsoleKey.Enter)
+                    Console.WriteLine();
+                if (keypress.KeyChar == '0')
                     a++;
-                if ((char)i == '1')
+                if (keypress.KeyChar == '1')
                     b++;
-                
-            } while (true);
-            Console.WriteLine("Символ 0 встречается " + a + ", 1 встерчается " + b + " раз.");
+
+            } while (keypress.KeyChar != '#');
+            Console.WriteLine("\nСимвол 0 встречается " + a + ", 1 встерчается " + b + " раз.");
             Console.ReadLine();
             Console.ReadLine();
         }
